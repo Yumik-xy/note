@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="description" content="Description" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css" />
+    </head>
+    <body>
+        <div id="app">加载中</div>
+        <script>
+            window.$docsify = {
+                name: "黄月亮的成长",
+                repo: "/Yumik-xy/note",
+                loadNavbar: true,
+                loadSidebar: true,
+                // autoHeader: true,
+                maxLevel: 4,
+                subMaxLevel: 2,
+                mergeNavbar: true,
+                themeColor: "#CD5C5C",
+                alias: {
+                    "/.*/_sidebar.md": "/_sidebar.md", // See #301
+                },
+                mergeNavbar: true,
+                auto2top: true,
+                search: {
+                    paths: "auto",
+                    placeholder: "搜索",
+                    noData: "没有结果!",
+                },
+                count: {
+                    countable: true,
+                    fontsize: "0.9em",
+                    color: "rgb(90,90,90)",
+                    language: "chinese",
+                },
+                plugins: [
+                    function (hook, vm) {
+                        hook.beforeEach(function (html) {
+                            var url =
+                                "https://github.com/docsifyjs/docsify/blob/master/docs/" +
+                                vm.route.file;
+                            var editHtml = "[📝 修改错误](" + url + ")\n";
+
+                            return editHtml + html;
+                        });
+
+                        hook.afterEach(function (html) {
+                            var footer = [
+                                "<hr/>",
+                                "<footer>",
+                                "<span>&copy;2021. </span>",
+                                '<span><a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备2021008564号</a></span>',
+                                "</footer>",
+                            ].join("");
+                            return html + footer;
+                        });
+                    },
+                ],
+            };
+        </script>
+        <!-- Docsify v4 -->
+        <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-kotlin.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+        <script>
+          if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('sw.js')
+          }
+        </script>
+    </body>
+</html>
