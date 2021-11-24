@@ -94,7 +94,7 @@
                 // facebook-like distraction free mode
                 distractionFreeMode: false,
                 title: location.hash.match(/#(.*?)([?]|$)/)[1],
-                id: location.hash.match(/#(.*?)([?]|$)/)[1],
+                id: "gitTalk",
             });
             window.onhashchange = function (event) {
                 if (event.newURL.split("?")[0] !== event.oldURL.split("?")[0]) {
