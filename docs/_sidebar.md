@@ -4,5 +4,5 @@
   - [Fragment 笔记](Android/Fragment)
   - [Service 笔记](Android/Service)
 - 🧮 Matlab 学习笔记
-  - [DTW+MFCC语音识别和端点识别](Matlab/DTW+MFCC-speech-recognition&endpoint-recognition)
+  - [DTW+MFCC语音识别和端点识别](Matlab/DTW+MFCC-speech-recognition-and-endpoint-recognition)
   - [KNN+PCA语音二分类](Matlab/KNN+PCA-speech-classification)
