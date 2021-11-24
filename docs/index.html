@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" sizes="any" mask="" href="./_images/yumik.svg">
+        <link rel="icon" sizes="any" mask="" href="./_images/yumik.svg" />
         <title>黄月亮的成长笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="description" content="Description" />
@@ -65,7 +65,7 @@
         <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
         <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 
         <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-kotlin.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
@@ -74,6 +74,29 @@
             if (typeof navigator.serviceWorker !== "undefined") {
                 navigator.serviceWorker.register("sw.js");
             }
+        </script>
+
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css" />
+
+        <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+        <script>
+            const gitalk = new Gitalk({
+                clientID: "bbb3e91a0422c009b04c",
+                clientSecret: "977b638b212098c84627f29317192ec7e2e52c47",
+                repo: "note",
+                owner: "Yumik-xy",
+                admin: ["Yumik-xy"],
+                // facebook-like distraction free mode
+                distractionFreeMode: false,
+                title: location.hash.match(/#(.*?)([?]|$)/)[1],
+                id: location.hash.match(/#(.*?)([?]|$)/)[1],
+            });
+            window.onhashchange = function (event) {
+                if (event.newURL.split("?")[0] !== event.oldURL.split("?")[0]) {
+                    location.reload();
+                }
+            };
         </script>
     </body>
 </html>
