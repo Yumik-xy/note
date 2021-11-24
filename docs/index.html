@@ -44,12 +44,16 @@
                             return editHtml + html;
                         });
 
+                        hook.doneEach(function () {
+                            twemoji.parse(document);
+                        });
+
                         hook.afterEach(function (html) {
                             var footer = [
                                 "<hr/>",
                                 "<footer>",
                                 "<span>月亮的智慧 &copy;2021. </span>",
-                                "<span>备案号: <a href='https://beian.miit.gov.cn/' target='_blank'>桂ICP备2021008564号</a></span>",
+                                "<span>备案号: <a href='https://beian.miit.gov.cn/' target='_blank'>桂ICP备2021008564号-1</a></span>",
                                 "</footer>",
                             ].join("");
                             return html + footer;
@@ -98,5 +102,7 @@
                 }
             };
         </script>
+
+        <script src="//cdn.jsdelivr.net/gh/TaQini/docsify-twemoji@master/twemoji.min.js"></script>
     </body>
 </html>
